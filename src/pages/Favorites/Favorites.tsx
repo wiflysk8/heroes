@@ -26,7 +26,9 @@ const Favorites = () => {
         w={"100%"}
         leftSection={<TbSearch size={14} />}
       />
-      <Text fw={600}>{filteredFavs.length} Results</Text>
+      <Text fw={400} size="sm" c={"gray"}>
+        {filteredFavs.length} RESULTS
+      </Text>
       {favs.length > 0 ? (
         <Flex wrap={"wrap"} gap={24} align={"center"}>
           {filteredFavs.map((hero: IHero) => (
