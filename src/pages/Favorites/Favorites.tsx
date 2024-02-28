@@ -4,11 +4,15 @@ import { Flex, Text, TextInput, Title } from "@mantine/core";
 import { TbSearch } from "react-icons/tb";
 import HeroeCard from "../../components/HeroeCard/HeroeCard";
 import { IHero } from "../../types/heroesTypes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Favorites = () => {
   const { favs } = useHeroes();
-  const [filteredFavs, setFilteredFavs] = useState<IHero[]>(favs);
+  const [filteredFavs, setFilteredFavs] = useState<IHero[]>([]);
+
+  useEffect(() => {
+    setFilteredFavs(favs);
+  }, [favs]);
 
   const filterHeroes = (name: string) => {
     const filtered = favs.filter((hero: IHero) =>
@@ -16,7 +20,6 @@ const Favorites = () => {
     );
     setFilteredFavs(filtered);
   };
-
   return (
     <Flex p={24} w="100%" h="100%" bg={"white"} direction="column" gap={24}>
       <Title order={3} fw={800}>
