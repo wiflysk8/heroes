@@ -6,10 +6,3 @@ export const AppContainer = styled.div`
   width: 100%;
   height: 100%;
 `;
-
-export const BodyContainer = styled.div`
-  overflow-y: auto;
-  display: grid;
-  grid-template-rows: auto;
-  height: 100%;
-`;

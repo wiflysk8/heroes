@@ -50,6 +50,7 @@ export const HeroesProvider = ({ children }: HeroesContextProps) => {
     fetchHeroes().then((data) => {
       setHeroes(data.slice(0, 50));
     });
+    setIsLoading(false);
   };
 
   return (

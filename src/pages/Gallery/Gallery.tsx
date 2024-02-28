@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useHeroes } from "../../context/heroesContext";
-import { Flex, Text, TextInput } from "@mantine/core";
+import { Flex, Loader, Text, TextInput } from "@mantine/core";
 import { TbSearch } from "react-icons/tb";
 import HeroeCard from "../../components/HeroeCard/HeroeCard";
 import { IHero } from "../../types/heroesTypes";
 
 const Gallery = () => {
-  const { heroes, getHeroes } = useHeroes();
+  const { heroes, getHeroes, isLoading } = useHeroes();
   const [filteredHeroes, setFilteredHeroes] = useState<IHero[]>([]);
 
   useEffect(() => {
@@ -36,9 +36,15 @@ const Gallery = () => {
         {filteredHeroes.length} RESULTS
       </Text>
       <Flex wrap={"wrap"} gap={24} w={"100%"} align={"center"}>
-        {filteredHeroes.map((hero: IHero) => (
-          <HeroeCard hero={hero} key={hero.id} />
-        ))}
+        {isLoading ? (
+          <Flex w={"100%"} h={"100%"} align={"center"} justify={"center"}>
+            <Loader size={"xl"} />
+          </Flex>
+        ) : (
+          filteredHeroes.map((hero: IHero) => (
+            <HeroeCard hero={hero} key={hero.id} />
+          ))
+        )}
       </Flex>
     </Flex>
   );

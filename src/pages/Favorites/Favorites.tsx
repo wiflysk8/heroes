@@ -19,7 +19,9 @@ const Favorites = () => {
 
   return (
     <Flex p={24} w="100%" h="100%" bg={"white"} direction="column" gap={24}>
-      <Title order={2}>Favorites</Title>
+      <Title order={3} fw={800}>
+        FAVORITES
+      </Title>
       <TextInput
         onChange={(e) => filterHeroes(e.target.value)}
         placeholder="SEARCH A CHARACTER ..."
