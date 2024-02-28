@@ -35,7 +35,13 @@ const Gallery = () => {
       <Text fw={400} size="sm" c={"gray"}>
         {filteredHeroes.length} RESULTS
       </Text>
-      <Flex wrap={"wrap"} gap={24} w={"100%"} align={"center"}>
+      <Flex
+        wrap={"wrap"}
+        gap={24}
+        w={"100%"}
+        align={"center"}
+        justify={"center"}
+      >
         {isLoading ? (
           <Flex w={"100%"} h={"100%"} align={"center"} justify={"center"}>
             <Loader size={"xl"} />
