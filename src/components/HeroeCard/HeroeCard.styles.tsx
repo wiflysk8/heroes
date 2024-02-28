@@ -8,8 +8,8 @@ export const CardContainer = styled.div`
   color: white;
   cursor: pointer;
   clip-path: polygon(0 0, 100% 0, 100% 95%, 90% 100%, 0 100%);
-  @media (max-width: 400px) {
-    max-width: 140px;
+  @media (max-width: 480px) {
+    max-width: 150px;
   }
 `;
 
