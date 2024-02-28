@@ -32,7 +32,7 @@ const Gallery = () => {
         placeholder="SEARCH A CHARACTER ..."
         leftSection={<TbSearch size={14} />}
       />
-      <Flex wrap={"wrap"} gap={24}>
+      <Flex wrap={"wrap"} gap={24} w={"100%"} justify={"center"}>
         {filteredHeroes.map((hero: IHero) => (
           <HeroeCard hero={hero} key={hero.id} />
         ))}
