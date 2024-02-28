@@ -11,7 +11,7 @@ const Header = () => {
     <Flex
       justify="space-between"
       align="center"
-      px={48}
+      px={36}
       w="100%"
       h={85}
       bg="black"
